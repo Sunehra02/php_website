@@ -1,4 +1,4 @@
-<?php $siteName = 'Kazi Sultana Sunehra'; ?>
+<?php $siteName = 'Rimjhim Sunehra'; ?>
 <?php require_once 'common/header.php'; ?>
 
 <?php require_once 'home.php'; ?>

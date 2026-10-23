@@ -3,7 +3,7 @@
   <div class="hero-inner">
     <div class="hero-text">
       <p class="eyebrow">Welcome to my portfolio</p>
-      <h1>Hi, I'm <em>Kazi Sultana Sunehra</em></h1>
+      <h1>Hi, I'm <em>Rimjhim Sunehra</em></h1>
       <p class="role">Aspiring Software Engineer</p>
       <div class="hero-actions">
         <a href="#contact" class="btn">Get in touch</a>
