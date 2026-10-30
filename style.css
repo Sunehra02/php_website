@@ -109,3 +109,68 @@ footer .bottom { width: 100%; margin-top: 30px; padding-top: 20px; border-top: 1
   .nav-toggle { display: flex; }
   section { padding: 60px 20px; }
 }
+.table-wrap { overflow-x: auto; }
+.contacts-table { width: 100%; border-collapse: collapse; background: var(--white); }
+.contacts-table th, .contacts-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--sand-deep); font-size: .9rem; }
+.contacts-table th { background: var(--sand-deep); color: var(--navy); }
+/* ===== Pretty contact form ===== */
+.contact-form {
+  max-width: 720px;
+  margin-top: 30px;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  border: 2px solid transparent;
+  border-radius: 24px;
+  background-image: linear-gradient(var(--white), var(--white)), linear-gradient(135deg, var(--sun), var(--coral), var(--pink));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 18px 40px rgba(255, 107, 74, .15);
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+}
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: .95rem;
+  color: var(--ink);
+  background: var(--sand);
+  border: 2px solid var(--sand-deep);
+  border-radius: 14px;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+.form-group input:focus {
+  outline: none;
+  background: var(--white);
+  border-color: var(--coral);
+  box-shadow: 0 0 0 4px rgba(255, 107, 74, .18);
+}
+.contact-form .btn {
+  grid-column: 1 / -1;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+.form-message {
+  max-width: 720px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: var(--navy);
+  background: linear-gradient(135deg, rgba(255, 183, 3, .25), rgba(255, 107, 74, .2));
+  border-left: 5px solid var(--coral);
+  border-radius: 12px;
+}
+@media (max-width: 600px) {
+  .contact-form { grid-template-columns: 1fr; padding: 22px; }
+}
