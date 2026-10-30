@@ -3,11 +3,10 @@ require_once 'common/crud.php';
 $siteName = 'Kazi Sultana Sunehra';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  delete_contact((int) $_POST["id"]);
-}
+  delete_contact((int) $_POST["id"]);}
 $contacts = get_contacts();
-require_once 'common/header.php';
-?>
+require_once 'common/header.php';?
+>
 <section>
   <h2>Saved contacts</h2>
   <div class="table-wrap">
