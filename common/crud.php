@@ -28,3 +28,17 @@ function update_contact($id, $name, $phone, $email, $address, $github, $linkedin
 function delete_contact($id) {
   db_query("DELETE FROM contacts WHERE id = ?", "i", [$id]);
 }
+
+// Users
+function get_user_by_email($email) {
+  return mysqli_fetch_assoc(mysqli_stmt_get_result(db_query("SELECT * FROM users WHERE email = ?", "s", [$email])));
+}
+
+function toggle_viewed($id) {
+  db_query("UPDATE contacts SET viewed = 1 - viewed WHERE id = ?", "i", [$id]);
+}
+
+function create_user($name, $email, $password, $role) {
+  db_query("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)",
+    "ssss", [$name, $email, password_hash($password, PASSWORD_DEFAULT), $role]);
+}

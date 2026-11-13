@@ -16,9 +16,10 @@ rel="stylesheet">
     <div class="brand">Welcome<span>.</span></div>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav id="siteNav">
-      <a href="#home">Home</a><a href="#education">Education</a><a href="#about">About</a>
-      <a href="#skills">Skills</a><a href="#experience">Experience</a>
-      <a href="#extracurricular">Extracurricular</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      <a href="index.php#home">Home</a><a href="index.php#education">Education</a><a href="index.php#about">About</a>
+      <a href="index.php#skills">Skills</a><a href="index.php#experience">Experience</a>
+      <a href="index.php#extracurricular">Extracurricular</a><a href="index.php#projects">Projects</a><a href="index.php#contact">Contact</a>
+      <a href="login.php">Admin</a>
     </nav>
   </header>
 </div>
