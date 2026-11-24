@@ -42,3 +42,25 @@ function create_user($name, $email, $password, $role) {
   db_query("INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)",
     "ssss", [$name, $email, password_hash($password, PASSWORD_DEFAULT), $role]);
 }
+// Admin projects
+function create_admin_project($title, $description, $file, $type) {
+  db_query("INSERT INTO admin_projects (title, description, file, type) VALUES (?, ?, ?, ?)",
+    "ssss", [$title, $description, $file, $type]);
+}
+
+function get_admin_projects() {
+  return mysqli_fetch_all(mysqli_stmt_get_result(db_query("SELECT * FROM admin_projects ORDER BY created_at DESC")), MYSQLI_ASSOC);
+}
+
+function get_admin_project($id) {
+  return mysqli_fetch_assoc(mysqli_stmt_get_result(db_query("SELECT * FROM admin_projects WHERE id = ?", "i", [$id])));
+}
+
+function update_admin_project($id, $title, $description, $file, $type) {
+  db_query("UPDATE admin_projects SET title = ?, description = ?, file = ?, type = ?, updated_at = NOW() WHERE id = ?",
+    "ssssi", [$title, $description, $file, $type, $id]);
+}
+
+function delete_admin_project($id) {
+  db_query("DELETE FROM admin_projects WHERE id = ?", "i", [$id]);
+}

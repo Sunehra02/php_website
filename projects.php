@@ -1,25 +1,22 @@
 <section id="projects">
   <p class="eyebrow dark">Projects</p>
   <h2>Things I've built</h2>
-  <?php $projects = [
-    ['title' => 'Restaurant Management System', 'desc' => 'A complete restaurant management system built with Python and 
-    Tkinter.', 'link' => 'https://github.com/Sunehra02/restaurant-management-system'],
-    ['title' => 'DBMS for a Restaurant Management System', 'desc' => 'A database management system for restaurants, designed 
-    to handle inventory, orders, and customer data.', 'link' => 'https://github.com/Sunehra02/DBMS-for-a-Restaurant-Management-System'],
-    ['title' => 'Tic Tac Toe — Python', 'desc' => 'A simple implementation of the classic Tic Tac Toe game using Python and 
-    Tkinter.', 'link' => 'https://github.com/Sunehra02/Tic-Tac-Toe-using-Python'],
-    ['title' => 'Pac-Man Clone — C++', 'desc' => 'A simple implementation of the classic Pac-Man game using C++ and graphics 
-    libraries.', 'link' => 'https://github.com/Sunehra02/pac-man-clone-with-cpp-graphics'],];?>
-
+  <?php
+  require_once 'common/crud.php';
+  $dbProjects = get_admin_projects();
+  ?>
   <div class="project-grid">
-    <?php foreach ($projects as $project): ?>
+    <?php if (empty($dbProjects)): ?>
+      <p>No projects added yet.</p>
+    <?php endif; ?>
+    <?php foreach ($dbProjects as $project): ?>
       <div class="card project-card">
-        <h3><?php echo htmlspecialchars($project['title']); ?>
-      </h3>
-        <p>
-          <?php echo htmlspecialchars($project['desc']); ?>
-        </p>
-        <a href="<?php echo htmlspecialchars($project['link']); 
-        ?>">GitHub Link →</a></div><?php endforeach; ?>
+        <img src="uploads/<?= htmlspecialchars($project["file"]) ?>" alt="<?= htmlspecialchars($project["title"]) ?>" style="width:100%; border-radius:12px; margin-bottom:12px;">
+        <h3><?= htmlspecialchars($project["title"]) ?></h3>
+        <p><?= htmlspecialchars($project["description"]) ?></p>
+        <p class="meta"><?= htmlspecialchars($project["type"]) ?></p>
+      </div>
+    <?php endforeach; ?>
   </div>
+  <p style="margin-top:30px;"><a href="manage_projects.php" class="btn ghost">View all projects</a></p>
 </section>

@@ -24,6 +24,7 @@ require_once 'common/header.php';
     <?php if (is_admin()): ?>
       <a href="add_contact.php" class="btn ghost">Add Contact</a>
       <a href="add_user.php" class="btn ghost">Add User</a>
+      <a href="manage_projects.php" class="btn ghost">Manage Projects</a>
     <?php endif; ?>
     <a href="logout.php" class="btn">Logout</a>
   </div>
